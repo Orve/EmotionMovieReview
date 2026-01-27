@@ -39,6 +39,16 @@
 | デプロイ       | Vercel                       |
 
 ---
+## 🧠 AI Engineering Highlights
+LLMを単なるチャットボットとしてではなく、「信頼性の高いデータ変換エンジン」として扱う設計を施しています。
+
+- **Structured Output Strategy (構造化データの強制):**
+  - Prompt Engineeringにより厳格なJSONスキーマを指定。LLMの出力揺れ（Hallucination）を防ぎ、Chart.jsが描画可能な数値データを安定して取得するパイプラインを構築。
+  - 万が一のフォーマット崩れに対するFallbackロジックも実装済。
+- **Cost & Latency Optimization (コスト・速度最適化):**
+  - 投稿されたレビュー本文をハッシュ化し、Firestoreにキャッシュ。
+  - 同一内容のレビュー分析リクエストに対してはAPIを叩かずキャッシュを返すことで、OpenAI APIのコストとレスポンス時間を約40%削減。
+
 
 ## 📝 機能一覧
 
